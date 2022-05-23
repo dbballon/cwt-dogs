@@ -1,38 +1,70 @@
-.App {
+.dog-app {
+  display: grid;
+  grid-template-columns: 15% 1fr;
+  margin: 30px 10px;
+}
+
+.tablet-sticky-header {
+  display: none;
+  position: absolute;
+  top: 0;
   text-align: center;
+  left: 0;
+  width: 100%;
+  height: 10vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.breeds-table {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 15px
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.breed {
+  border: 2px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.breed-image {
+  height: 220px;
+  width: calc(100% - 10px);
+  background-position: center 20%;
+  background-size: cover;
+  padding: 5px;
+}
+
+ul.summary-list {
+  list-style: none;
+}
+
+span.name,
+p.likes {
   color: white;
+  background: #0000006b;
+  padding: 2px 6px;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+p.likes {
+  width: fit-content;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 1440px) {
+  .dog-app {
+    grid-template-columns: 25% 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .tablet-sticky-header {
+    display: block;
+  }
+
+  .breeds-table {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .breeds-table,
+  .summary-list {
+    max-height: 90vh;
+    overflow-y: scroll;
+    margin-top: 10vh;
   }
 }
